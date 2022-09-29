@@ -7,7 +7,7 @@ namespace AldioumaBot
 	class Program
 	{
 #pragma warning disable CS8618
-		public static DiscordSocketClient Client { get; set; } // non può essere null
+		public static DiscordSocketClient Client { get; set; }
 #pragma warning restore
 
 		public const ulong GuildId = 786009481246277653;
@@ -19,9 +19,9 @@ namespace AldioumaBot
 		public static async Task Main()
 		{
 			Client = new();
-			await Client.LoginAsync(TokenType.Bot, "MTAxNjc1OTM3OTAyODA5NTA0Nw.GKsvDR.81Dl_89F1dHoeDLjPvwub8qcd95xo_jhEmWtaU");
+			await Client.LoginAsync(TokenType.Bot, Token.DiscordToken);
 			await Client.StartAsync();
-			
+
 			Client.Ready += SetUpBot;
 			
 			await Task.Delay(-1);
@@ -77,7 +77,8 @@ namespace AldioumaBot
 					"kabobo",
 					"matteo",
 					"1984",
-					"avigliano"
+					"avigliano",
+					"cyberpunk"
 				};
 			}
 
@@ -96,7 +97,8 @@ namespace AldioumaBot
 					async () => await ch.SendMessageAsync("https://imgur.com/a/zMIeZ9N"),
 					async () => await ch.SendMessageAsync("https://imgur.com/a/umENPRL"),
 					async () => await ch.SendMessageAsync(Helpers.Get1984()),
-					async () => await ch.SendMessageAsync("è arrivata mammina la piscia r ta mamma scrivi scrivi :grin: si sol n'abbunat")
+					async () => await ch.SendMessageAsync("è arrivata mammina la piscia r ta mamma scrivi scrivi :grin: si sol n'abbunat"),
+					async () => await ch.SendMessageAsync("https://www.youtube.com/watch?v=qUxBn5KDxsA ووكدسكاكپوسداوكيدجخجفدسفيس")
 				};
 			}
 		}

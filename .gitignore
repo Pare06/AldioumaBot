@@ -363,5 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # file contenente segreti di stato della repubblica democratica del congo
-Token.cs
 /Token.cs
