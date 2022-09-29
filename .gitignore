@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# file contenente segreti di stato della repubblica democratica del congo
+Token.cs
+/Token.cs
