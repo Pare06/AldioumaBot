@@ -86,7 +86,16 @@ namespace AldioumaBot
 			{
 				return new Command[]
 				{
-					async () => await ch.SendMessageAsync($"il duomo è gia esploso {Math.Floor((DateTime.Now - new DateTime(2021, 8, 16, 15, 32, 0)).TotalDays)} giorni fa 🙏🏿"),
+					async () =>
+					{
+						DateTime attentato = new(2023, 8, 16, 15, 32, 00);
+						if (DateTime.Now > attentato) // dopo il 16/8?
+							await ch.SendMessageAsync($"il duomo è gia esploso {Math.Floor((DateTime.Now - attentato).TotalDays)} giorni fa 🙏🏿");
+						else if (DateTime.Now < attentato) // prima del 16/8?
+							await ch.SendMessageAsync($"mancano {Math.Floor((DateTime.Now - attentato).TotalDays * -1)} giorni all'attentato al duomo di pisa 🙏🏿");
+						else // è il 16/8?
+							await ch.SendMessageAsync("oggi è il grande giorno 🙏🏿 preparate le bombe");
+					},
 					async () =>	await ch.SendMessageAsync("dio stronzo mi sto a segà e questo tagga tutti"),
 					async () => await ch.SendMessageAsync("🙏🏿 goudi kebe akbar mihail touba sawarim islam jihad pontedera allah aldiouma 🙏🏿"),
 					async () => await ch.SendMessageAsync("https://imgur.com/a/eLS0Flt"),
